@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Data Pengguna</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Form Data Pengguna</h1>
+        <p>Silakan masukkan data diri Anda</p>
+
+        <form method="POST">
+            <label>Nama:</label>
+            <input type="text" name="nama" placeholder="Masukkan nama" required>
+
+            <label>Umur:</label>
+            <input type="number" name="umur" placeholder="Masukkan umur" required>
+
+            <label>Asal:</label>
+            <input type="text" name="asal" placeholder="Masukkan asal daerah" required>
+
+            <button type="submit">Kirim Data</button>
+        </form>
+
+        {% if hasil %}
+            <div class="hasil">
+                <h2>Data Berhasil Dikirim!</h2>
+                <p>Halo, {{ nama }}!</p>
+                <p>Umur: {{ umur }} tahun</p>
+                <p>Asal: {{ asal }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
